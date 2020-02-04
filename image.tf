@@ -19,6 +19,11 @@ data "ibm_is_zone" "zone" {
   region = "${data.ibm_is_region.region.name}"
 }
 
+data "ibm_is_zone" "zone" {
+  name = "${var.zone}"
+  region = "${data.ibm_is_region.region.name}"
+}
+
 data "ibm_is_image" "f5_custom_image" {
   name       = "sample-centos"
   depends_on = ["ibm_is_image.f5_custom_image"]
