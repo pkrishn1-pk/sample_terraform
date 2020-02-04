@@ -14,9 +14,8 @@ data "ibm_is_instance_profile" "vnf_profile" {
   name = "${var.vnf_profile}"
 }
 
-data "ibm_is_zone" "zone" {
-  name = "${var.zone}"
-  region = "${data.ibm_is_region.region.name}"
+data "ibm_is_region" "region" {
+  name = "${var.region}"
 }
 
 data "ibm_is_zone" "zone" {
