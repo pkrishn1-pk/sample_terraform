@@ -19,6 +19,11 @@ data "ibm_is_zone" "zone" {
   region = "${data.ibm_is_region.region.name}"
 }
 
+data "ibm_is_image" "f5_custom_image" {
+  name       = "sample-centos"
+  depends_on = ["ibm_is_image.f5_custom_image"]
+}
+
 resource "ibm_is_image" "f5_custom_image" {
 
   href             = "cos://us-south/cos-standard-o6d/CentOS-7-x86_64-GenericCloud-1503.qcow2"
