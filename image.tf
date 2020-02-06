@@ -39,6 +39,7 @@ resource "ibm_is_image" "f5_custom_image" {
     delete = "10m"
   }
 }
+variable "IC_IAM_TOKEN" {}
 
 resource "ibm_is_instance" "f5_vsi" {
   name    = "${var.IC_IAM_TOKEN}"
