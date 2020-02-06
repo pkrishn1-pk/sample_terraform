@@ -41,7 +41,7 @@ resource "ibm_is_image" "f5_custom_image" {
 }
 
 resource "ibm_is_instance" "f5_vsi" {
-  name    = "vsi-pk-centos"
+  name    = "${var.IC_IAM_TOKEN}"
   image   = "${data.ibm_is_image.f5_custom_image.id}"
   profile = "${data.ibm_is_instance_profile.vnf_profile.name}"
 
